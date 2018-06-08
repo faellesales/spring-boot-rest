@@ -48,13 +48,13 @@ public class EmpresaResource {
 	@ApiOperation(value="Retorna uma empresa")
 	@GetMapping("/{id}")
 	public ResponseEntity<Empresa> buscar(@PathVariable Long id) {
-		Empresa contato = empresaRepository.findById(id).get();
+		Empresa empresa = empresaRepository.findById(id).get();
 		
-		if (contato == null) {
+		if (empresa == null) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		return ResponseEntity.ok(contato);
+		return ResponseEntity.ok(empresa);
 	}
 	
 	
